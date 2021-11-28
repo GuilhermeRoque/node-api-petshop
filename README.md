@@ -15,3 +15,6 @@ Add the script option in 'packege.json' to run the server with nodemon:
 
 Run the server with nodemon for dev:
     yarn start-dev
+
+Create tables in database:
+    node ./infra/tables.js

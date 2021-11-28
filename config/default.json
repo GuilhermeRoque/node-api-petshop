@@ -1,0 +1,11 @@
+{
+    "mysql":{
+        "schema":"petshop",
+        "user":"inet",
+        "password":"Lock1net",
+        "host":"127.0.0.1"
+    },
+    "api":{
+        "port":3000
+    }
+}

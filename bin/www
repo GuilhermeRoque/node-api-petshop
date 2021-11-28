@@ -7,14 +7,13 @@
 var app = require('../app');
 var debug = require('debug')('my-first-node-api:server');
 var http = require('http');
-const conn = require("../infra/db")
-const Tabela = require("../infra/tables");
+const config = require("config")
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || config.get("api.port"));
 app.set('port', port);
 
 /**
@@ -31,18 +30,10 @@ var server = http.createServer(app);
 // server.on('error', onError);
 // server.on('listening', onListening);
 
-conn.connect(err =>{
-  if (err){
-    console.log(err)
-  }else {
-    console.log("Conectado com sucesso")
-    Tabela.init(conn)
-    server.listen(port);
-    server.on('error', onError);
-    server.on('listening', onListening);
-  }
-})
-
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+console.log("Server started")
 /**
  * Normalize a port into a number, string, or false.
  */
