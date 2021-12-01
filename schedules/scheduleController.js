@@ -15,8 +15,12 @@ router.get('/:id', async (req, res, next)=>{
             id: id
         }
     })
-    console.log(result)
-    res.send(result)
+    if (!result){
+        next()
+    }else{
+        console.log(result)
+        res.send(result)    
+    }
 
 })
 

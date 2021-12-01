@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize")
 const db = require("../infra/db")
 
-const collums={
+const columns={
     client:{
         type: Sequelize.STRING,
         allowNull: false
@@ -36,4 +36,4 @@ const options = {
 }
 
 // table name in code
-module.exports = db.define('schedules',collums,options);
+module.exports = db.define('schedules',columns,options);
