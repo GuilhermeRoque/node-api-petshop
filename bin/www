@@ -8,6 +8,7 @@ var app = require('../app');
 var debug = require('debug')('my-first-node-api:server');
 var http = require('http');
 const config = require("config")
+require('dotenv').config();
 
 /**
  * Get port from environment and store in Express.

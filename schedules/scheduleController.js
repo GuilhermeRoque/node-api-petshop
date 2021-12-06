@@ -24,6 +24,7 @@ router.get('/:id', async (req, res, next)=>{
 
 })
 
+
 router.put('/:id', async (req, res, next)=>{
     const id =  req.params.id
     const result =  await model.findOne({
